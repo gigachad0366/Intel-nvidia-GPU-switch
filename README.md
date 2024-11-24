@@ -2,6 +2,4 @@ A one click bash script for GPU switch on linux laptops with hybrid graphics, it
 
 It requires ```nvidia-prime``` to be installed (it is automatically installed with the nvidia driver), if not, install it by running ```sudo apt install nvidia-prime```.
 
-You have to replace ```displaymanager``` with the display manager you have. it is set for GNOME by default.
-
 Why would you need to switch to intel GPU ? it significantly increases battery life by completely turning off the nvidia driver, and i found it useful for compatibility on some apps.
