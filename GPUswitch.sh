@@ -3,7 +3,7 @@
 currentgpu=$(prime-select query)
 chgstate=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state)
 input="none"
-displaymanager="gdm3" # gdm3 is the gnome display manager, replace it with the display manager you have.
+displaymanager=$(systemctl status display-manager.service | grep -oP '(?<=/)[^/]+(?=\.service)' | head -n 1)
 
 if [[ $chgstate == *"fully-charged"* || $chgstate == *"pending-charge"* || $chgstate == *" charging"* ]]; then
   if [[ $currentgpu == "intel" ]]; then
